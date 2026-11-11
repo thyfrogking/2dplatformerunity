@@ -261,6 +261,8 @@ public class PlayerController : MonoBehaviour
             rayLength, groundLayers);
         isGrounded = hit.collider != null;
     }
+
+    
 }
 
 public enum Direction
