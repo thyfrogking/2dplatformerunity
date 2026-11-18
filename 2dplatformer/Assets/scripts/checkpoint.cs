@@ -1,29 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class checkpoint : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static Vector2 savedPosition = Vector2.zero;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("level2");
-            Debug.Log("help");
+            savedPosition = collision.transform.position;
         }
-      
     }
-
 }
